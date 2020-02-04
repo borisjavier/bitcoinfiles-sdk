@@ -104,10 +104,11 @@ export class Client {
     datapay(request: { data: any[], pay: { key: string }}, callback?: Function): Promise<any> {
         return new Promise(async (resolve, reject) => {
             datapay.send({
-                data: request.data,
-                pay: {
-                    key: request.pay.key,
-                }
+                 data: request.data,
+                 safe: true,
+                 pay: {
+                     key: request.pay.key,
+                 }
             }, async (err: any, transaction: any) => {
                 if (err) {
                     console.log('err', err);

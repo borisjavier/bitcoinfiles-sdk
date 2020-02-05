@@ -105,6 +105,7 @@ export class Client {
         return new Promise(async (resolve, reject) => {
             datapay.send({
                 data: request.data,
+                safe: true,
                 pay: {
                     key: request.pay.key,
                 }
